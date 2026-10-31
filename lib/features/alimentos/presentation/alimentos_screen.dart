@@ -25,7 +25,6 @@ class AlimentosScreen extends StatefulWidget {
 }
 
 class _AlimentosScreenState extends State<AlimentosScreen> {
-  // Lista temporal de prueba (simulando los datos que vendrán de la API MySQL)
   final List<AlimentoItem> _alimentos = [
     AlimentoItem(codigo: 'AL-001', nombre: 'Arroz blanco', categoria: 'Granos', unidadMedida: 'Kilogramos', presentacion: 'Saco 50kg'),
     AlimentoItem(codigo: 'AL-002', nombre: 'Frijol negro', categoria: 'Granos', unidadMedida: 'Kilogramos', presentacion: 'Saco 50kg'),
@@ -50,7 +49,6 @@ class _AlimentosScreenState extends State<AlimentosScreen> {
       ),
       body: Column(
         children: [
-          // Barra de Búsqueda y Filtros
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextField(
@@ -108,7 +106,6 @@ class _AlimentosScreenState extends State<AlimentosScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFF7A1C20),
         foregroundColor: Colors.white,
-        // Aquí abriremos el formulario para registrar un nuevo alimento (Bloque 5)
         onPressed: _mostrarFormularioNuevoAlimento,
         child: const Icon(Icons.add),
       ),

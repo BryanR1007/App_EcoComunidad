@@ -18,7 +18,7 @@ class UsuarioModel {
       id: json['id'],
       nombre: json['nombre'],
       username: json['username'],
-      rol: json['rol'], // Validado y devuelto por el servidor MySQL
+      rol: json['rol'],
       token: json['token'] ?? '',
     );
   }

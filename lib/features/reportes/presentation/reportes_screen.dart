@@ -6,7 +6,6 @@ import 'package:printing/printing.dart';
 class ReportesScreen extends StatelessWidget {
   const ReportesScreen({super.key});
 
-  // Función para generar el PDF del Comprobante de Donación
   Future<void> _generarComprobanteDonacion(BuildContext context) async {
     final pdf = pw.Document();
 
@@ -17,7 +16,6 @@ class ReportesScreen extends StatelessWidget {
           return pw.Column(
             crossAxisAlignment: pw.CrossAxisAlignment.start,
             children: [
-              // Encabezado institucional
               pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
@@ -58,8 +56,7 @@ class ReportesScreen extends StatelessWidget {
               ),
               
               pw.Spacer(),
-              
-              // Firmas
+             
               pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
@@ -85,7 +82,6 @@ class ReportesScreen extends StatelessWidget {
       ),
     );
 
-    // Mostrar la vista previa e impresión del PDF
     await Printing.layoutPdf(
       onLayout: (PdfPageFormat format) async => pdf.save(),
       name: 'Comprobante_Donacion_DON-2026-001.pdf',
@@ -114,7 +110,6 @@ class ReportesScreen extends StatelessWidget {
           ),
           const SizedBox(height: 20),
 
-          // Tarjeta Comprobante de Donación
           Card(
             elevation: 2,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -137,7 +132,6 @@ class ReportesScreen extends StatelessWidget {
           ),
           const SizedBox(height: 12),
 
-          // Tarjeta Constancia de Entrega
           Card(
             elevation: 2,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -164,7 +158,6 @@ class ReportesScreen extends StatelessWidget {
           ),
           const SizedBox(height: 12),
 
-          // Tarjeta Reporte de Inventario General
           Card(
             elevation: 2,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

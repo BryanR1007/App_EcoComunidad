@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// Importa tu nueva pantalla (asegúrate de que la ruta coincida con la de tu proyecto)
 import 'features/dashboard/presentation/dashboard_screen.dart';
 
 void main() {
@@ -15,12 +14,12 @@ class EcoComunidadApp extends StatelessWidget {
       title: 'EcoComunidad Móvil',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color(0xFF7A1C20), // Tono vinotinto corporativo
+        primaryColor: const Color(0xFF7A1C20),
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF7A1C20),
           primary: const Color(0xFF7A1C20),
         ),
-        scaffoldBackgroundColor: const Color(0xFF7A1C20), // Fondo general a juego
+        scaffoldBackgroundColor: const Color(0xFF7A1C20),
       ),
       home: const LoginScreen(),
     );
@@ -55,7 +54,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
     setState(() => _isLoading = true);
 
-    // Simulación de autenticación (Aquí conectaremos con la API REST en el Bloque 13)
     Future.delayed(const Duration(seconds: 2), () {
       if (!mounted) return; 
 
@@ -65,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
       MaterialPageRoute(
         builder: (context) => DashboardScreen(
           username: usuario,
-          role: 'Administrador', // Aquí puedes cambiar el rol según la lógica de tu aplicación
+          role: 'Administrador',
         ),
         ),
       );
@@ -88,11 +86,10 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Logotipo institucional desde los assets
                   Image.asset(
                     'assets/images/logo.png',
-                    width: 120,  // Ajusta el ancho según lo necesites
-                    height: 120, // Ajusta el alto según lo necesites
+                    width: 120, 
+                    height: 120,
                     fit: BoxFit.contain,
                   ),
                   const SizedBox(height: 16),
@@ -105,8 +102,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  
-                  // Campo de Usuario
                   TextField(
                     controller: _userController,
                     decoration: InputDecoration(
@@ -118,8 +113,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 16),
-
-                  // Campo de Contraseña
                   TextField(
                     controller: _passController,
                     obscureText: true,
@@ -132,8 +125,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 24),
-
-                  // Botón Iniciar Sesión
                   SizedBox(
                     width: double.infinity,
                     height: 50,

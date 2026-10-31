@@ -8,7 +8,7 @@ class InventarioItem {
   final String unidadMedida;
   final String fechaVencimiento;
   final String ubicacion;
-  final String estado; // 'Disponible', 'Por vencer', 'Vencido'
+  final String estado;
 
   InventarioItem({
     required this.codigoAlimento,
@@ -30,7 +30,6 @@ class InventarioScreen extends StatefulWidget {
 }
 
 class _InventarioScreenState extends State<InventarioScreen> {
-  // Lista de prueba para simular el inventario con lotes y vencimientos
   final List<InventarioItem> _inventario = [
     InventarioItem(
       codigoAlimento: 'AL-001',
@@ -48,7 +47,7 @@ class _InventarioScreenState extends State<InventarioScreen> {
       lote: 'LOT-ACE-102',
       cantidadDisponible: 18.0,
       unidadMedida: 'Litros',
-      fechaVencimiento: '2026-11-02', // Próximo a vencer
+      fechaVencimiento: '2026-11-02',
       ubicacion: 'Estante B - Fila 1',
       estado: 'Por vencer',
     ),
@@ -58,7 +57,7 @@ class _InventarioScreenState extends State<InventarioScreen> {
       lote: 'LOT-FRJ-303',
       cantidadDisponible: 5.0,
       unidadMedida: 'Kilogramos',
-      fechaVencimiento: '2026-09-10', // Vencido
+      fechaVencimiento: '2026-09-10',
       ubicacion: 'Estante A - Fila 4',
       estado: 'Vencido',
     ),
@@ -94,7 +93,6 @@ class _InventarioScreenState extends State<InventarioScreen> {
       ),
       body: Column(
         children: [
-          // Filtros rápidos por estado
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: SingleChildScrollView(
@@ -123,7 +121,6 @@ class _InventarioScreenState extends State<InventarioScreen> {
             ),
           ),
           
-          // Lista de Inventario
           Expanded(
             child: ListView.builder(
               itemCount: inventarioFiltrado.length,

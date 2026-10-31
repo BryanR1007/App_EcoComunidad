@@ -24,7 +24,6 @@ class EntregasScreen extends StatefulWidget {
 }
 
 class _EntregasScreenState extends State<EntregasScreen> {
-  // Lista de prueba para simular entregas realizadas
   final List<EntregaItem> _entregas = [
     EntregaItem(
       numeroEntrega: 'ENT-2026-001',
@@ -115,7 +114,7 @@ class _EntregasScreenState extends State<EntregasScreen> {
                         familia: familiaCtrl.text.trim(),
                         fechaHora: DateTime.now().toString().substring(0, 16),
                         responsable: 'Usuario Móvil',
-                        totalAlimentos: 2, // Simulado
+                        totalAlimentos: 2,
                       ),
                     );
                   });

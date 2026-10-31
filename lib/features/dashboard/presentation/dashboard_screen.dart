@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:eco_comunidad/features/alimentos/presentation/alimentos_screen.dart'; // Asegúrate de que la ruta sea correcta
-import 'package:eco_comunidad/features/donaciones/presentation/donaciones_screen.dart'; // Asegúrate de que la ruta sea correcta
-import 'package:eco_comunidad/features/inventario/presentation/inventario_screen.dart'; // Asegúrate de que la ruta sea correcta
-import 'package:eco_comunidad/features/entregas/presentation/entregas_screen.dart'; // Asegúrate de que la ruta sea correcta
+import 'package:eco_comunidad/features/alimentos/presentation/alimentos_screen.dart';
+import 'package:eco_comunidad/features/donaciones/presentation/donaciones_screen.dart';
+import 'package:eco_comunidad/features/inventario/presentation/inventario_screen.dart';
+import 'package:eco_comunidad/features/entregas/presentation/entregas_screen.dart';
 import 'package:eco_comunidad/features/trazabilidad/presentation/historial_bajas_screen.dart'; 
-import 'package:eco_comunidad/features/reportes/presentation/reportes_screen.dart'; // Asegúrate de que la ruta sea correcta
+import 'package:eco_comunidad/features/reportes/presentation/reportes_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   final String username;
-  final String role; // Ej: 'Administrador', 'Almacén', 'Entregas', 'Coordinador'
+  final String role; //'Administrador', 'Almacén', 'Entregas', 'Coordinador'
 
   const DashboardScreen({
     super.key,
@@ -45,15 +45,15 @@ class DashboardScreen extends StatelessWidget {
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
+
               leading: const Icon(Icons.inventory, color: Color(0xFF7A1C20)),
               title: const Text('Catálogo de Alimentos'),
               onTap: () {
-                // Aquí enlazaremos el Bloque 5"ya esta enlazado......
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const AlimentosScreen(),
-                  ), // Tu pantalla de alimentos
+                  ),
                 );
               },
             ),
@@ -61,7 +61,6 @@ class DashboardScreen extends StatelessWidget {
               leading: const Icon(Icons.card_giftcard, color: Color(0xFF7A1C20)),
               title: const Text('Donaciones'),
               onTap: () {
-                // Enlazaremos Bloques 6 y 7  .... listo
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -74,7 +73,6 @@ class DashboardScreen extends StatelessWidget {
               leading: const Icon(Icons.inventory_outlined, color: Color(0xFF7A1C20)),
               title: const Text('Inventario'),
               onTap: () {
-                // Enlazaremos Bloques 6 y 7  .... listo
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -87,7 +85,6 @@ class DashboardScreen extends StatelessWidget {
               leading: const Icon(Icons.family_restroom, color: Color(0xFF7A1C20)),
               title: const Text('Familias Beneficiarias'),
               onTap: () {
-                // Enlazaremos Bloque 8 y 9 listo
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -100,7 +97,6 @@ class DashboardScreen extends StatelessWidget {
               leading: const Icon(Icons.heart_broken, color: Color(0xFF7A1C20)),
               title: const Text('Bajas'),
               onTap: () {
-                // Enlazaremos Bloque 8 y 9 listo
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -113,7 +109,6 @@ class DashboardScreen extends StatelessWidget {
               leading: const Icon(Icons.assignment_outlined, color: Color(0xFF7A1C20)),
               title: const Text('Reportes'),
               onTap: () {
-                // Enlazaremos Bloque 8 y 9 listo
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -127,8 +122,9 @@ class DashboardScreen extends StatelessWidget {
               leading: const Icon(Icons.logout, color: Colors.red),
               title: const Text('Cerrar Sesión', style: TextStyle(color: Colors.red)),
               onTap: () {
-                Navigator.pop(context); // Cierra drawer
-                Navigator.pop(context); // Regresa al Login
+                Navigator.pop(context);
+                
+                
               },
             ),
           ],
@@ -186,7 +182,6 @@ class DashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             
-            // Cuadrícula de Tarjetas para los Módulos
             GridView.count(
               crossAxisCount: 2,
               shrinkWrap: true,

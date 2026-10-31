@@ -24,7 +24,6 @@ class DonacionesScreen extends StatefulWidget {
 }
 
 class _DonacionesScreenState extends State<DonacionesScreen> {
-  // Lista de prueba para simular donaciones registradas
   final List<DonacionItem> _donaciones = [
     DonacionItem(
       numeroDonacion: 'DON-2026-001',
@@ -89,7 +88,6 @@ class _DonacionesScreenState extends State<DonacionesScreen> {
                   const SizedBox(height: 8),
                   OutlinedButton.icon(
                     onPressed: () {
-                      // Aquí se abriría el selector de múltiples alimentos y lotes
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Ventana para agregar alimentos al lote')),
                       );
@@ -120,7 +118,7 @@ class _DonacionesScreenState extends State<DonacionesScreen> {
                         donante: donanteCtrl.text.trim(),
                         fecha: DateTime.now().toString().substring(0, 16),
                         tipoDonacion: tipoSeleccionado,
-                        totalAlimentos: 1, // Simulado
+                        totalAlimentos: 1,
                       ),
                     );
                   });

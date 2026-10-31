@@ -32,7 +32,6 @@ class HistorialBajasScreen extends StatefulWidget {
 class _HistorialBajasScreenState extends State<HistorialBajasScreen> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
-  // Lista de prueba para el Historial / Trazabilidad (Bloque 11)
   final List<MovimientoHistorial> _historial = [
     MovimientoHistorial(
       tipo: 'Entrada',
@@ -56,7 +55,6 @@ class _HistorialBajasScreenState extends State<HistorialBajasScreen> with Single
     ),
   ];
 
-  // Lista de prueba para Bajas de Alimentos (Bloque 10)
   final List<MovimientoHistorial> _bajas = [
     MovimientoHistorial(
       tipo: 'Baja',
@@ -190,7 +188,6 @@ class _HistorialBajasScreenState extends State<HistorialBajasScreen> with Single
       body: TabBarView(
         controller: _tabController,
         children: [
-          // Pestaña 1: Trazabilidad / Historial completo
           ListView.builder(
             itemCount: _historial.length,
             itemBuilder: (context, index) {
@@ -211,9 +208,8 @@ class _HistorialBajasScreenState extends State<HistorialBajasScreen> with Single
                 ),
               );
             },
-          ),
-          
-          // Pestaña 2: Bajas
+          ),        
+
           ListView.builder(
             itemCount: _bajas.length,
             itemBuilder: (context, index) {
